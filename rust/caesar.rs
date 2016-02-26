@@ -2,7 +2,7 @@ use std::io;
 static ALPHABET: [char; 26] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 fn main()
  {
-  println!("CESAR");
+  println!("Caesar Cipher");
   println!("1. Encrypt message");
   println!("2. Decrypt message");
   println!("Choose an option:");
