@@ -3,9 +3,9 @@ static ALPHABET: [char; 26] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
 fn main()
  {
   println!("CESAR");
-  println!("1. Encriptar mensaje");
-  println!("2. Desencriptar mensaje");
-  println!("Que deseas hacer:");
+  println!("1. Encrypt message");
+  println!("2. Decrypt message");
+  println!("Choose an option:");
   let input = io::stdin();
   let mut o = String::new();
   input.read_line(&mut o).ok().expect("Error");
@@ -13,7 +13,7 @@ fn main()
   let x = match n {
             Some(x) => x,
             None            => {
-                println!("Opción no valida");
+                println!("Option is not valid");
                 return;
             }
     };
@@ -21,24 +21,24 @@ fn main()
    {
     1 => encrypt(),
     2 => decrypt(),
-    _ => println!("Opción no valida"),
+    _ => println!("Option is not valid"),
    }
  }
 fn encrypt()
  {
-  println!("Introduce el mensaje a encriptar:");
+  println!("Message to encrypt:");
   let input = io::stdin();
   let mut m = String::new();
   input.read_line(&mut m).ok().expect("Error");
   let value = io::stdin();
   let mut v = String::new();
-  println!("Introduce el desplazamiento:");
+  println!("Right shift:");
   value.read_line(&mut v).ok().expect("Error");
   let t: Option<i32> = v.trim().parse::<i32>().ok();
   let y = match t {
             Some(y) => y,
             None            => {
-                println!("Opción no valida");
+                println!("Option is not valid");
                 return;
             }
     };
@@ -60,7 +60,7 @@ fn encrypt()
        }
      }
    }
-  print!("El mensaje encriptado es: ");
+  print!("Encrypted message is: ");
   for e in xs.iter()
    {
     print!("{}",e);
@@ -101,5 +101,5 @@ fn modify(c: char, y: i32) -> char
  }
 fn decrypt()
  {
-  println!("Mensaje desencriptado");
+  println!("Message decrypted");
  }
